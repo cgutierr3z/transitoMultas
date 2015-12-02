@@ -73,13 +73,121 @@ easy_admin:
             - { name: 'edit', label: 'Editar' }
             - { name: 'show', label: 'Ver' }
     entities:
-        - Erre\TransitoMultasBundle\Entity\Agente
-        - Erre\TransitoMultasBundle\Entity\Ciudad
-        - Erre\TransitoMultasBundle\Entity\Departamento
-        - Erre\TransitoMultasBundle\Entity\Direccion
-        - Erre\TransitoMultasBundle\Entity\Infraccion
-        - Erre\TransitoMultasBundle\Entity\Marca
-        - Erre\TransitoMultasBundle\Entity\Modelo
-        - Erre\TransitoMultasBundle\Entity\Persona
-        - Erre\TransitoMultasBundle\Entity\Vehiculo
-        
+        Agentes: 
+            class: Erre\TransitoMultasBundle\Entity\Agente
+            list:
+                fields:
+                    - { property: 'noregistro', label: 'No. Registro' }
+                    - { property: 'nombreagente', label: 'Nombre' }
+                    - { property: 'apellidoagente', label: 'Apellido' }
+            form:
+                fields:
+                    - { property: 'nombreagente', label: 'Nombre' }
+                    - { property: 'apellidoagente', label: 'Apellido' }
+
+        Ciudades: 
+            class: Erre\TransitoMultasBundle\Entity\Ciudad
+            list:
+                fields:
+                    - { property: 'idciudad', label: 'ID Ciudad' }
+                    - { property: 'ciudad', label: 'Ciudad' }
+                    - { property: 'iddepartamento', label: 'Departamento' }
+            form:
+                fields:
+                    - { property: 'ciudad', label: 'Cuidad' }
+                    - { property: 'iddepartamento', label: 'Departamento' }
+        Departamentos: 
+            class: Erre\TransitoMultasBundle\Entity\Departamento
+            list:
+                fields:
+                    - { property: 'iddepartamento', label: 'ID Depto.' }
+                    - { property: 'departamento', label: 'Departamento' }
+            form:
+                fields:
+                    - { property: 'departamento', label: 'Departamento' }
+        Direcciones: 
+            class: Erre\TransitoMultasBundle\Entity\Direccion
+            list:
+                fields:
+                    - { property: 'iddireccion', label: 'ID Dir.' }
+                    - { property: 'calle', label: 'Calle' }
+                    - { property: 'numero', label: 'Numero' }
+                    - { property: 'idciudad', label: 'Ciudad' }
+            form:
+                fields:
+                    - { property: 'calle', label: 'Calle' }
+                    - { property: 'numero', label: 'Numero' }
+                    - { property: 'idciudad', label: 'Ciudad' }
+        Infracciones: 
+            class: Erre\TransitoMultasBundle\Entity\Infraccion
+            list:
+                fields:
+                    - { property: 'numeroexpediente', label: 'No. Exp.' }
+                    - { property: 'lugarinfraccion', label: 'Lugar' }
+                    - { property: 'importeinfraccion', label: 'Importe' }
+                    - { property: 'articuloinfraccion', label: 'Articulo' }
+                    - { property: 'carreterainfraccion', label: 'Carretera' }
+                    - { property: 'kilometroinfraccion', label: 'KM' }
+            form:
+                fields:
+                    - { property: 'lugarinfraccion', label: 'Lugar' }
+                    - { property: 'importeinfraccion', label: 'Importe' }
+                    - { property: 'articuloinfraccion', label: 'Articulo' }
+                    - { property: 'carreterainfraccion', label: 'Carretera' }
+                    - { property: 'kilometroinfraccion', label: 'KM' }
+        Marcas: 
+            class: Erre\TransitoMultasBundle\Entity\Marca
+            list:
+                fields:
+                    - { property: 'idmarca', label: 'ID.' }
+                    - { property: 'codigomarca', label: 'Codigo' }
+                    - { property: 'nombremarca', label: 'Nombre' }
+                    - { property: 'iddireccion', label: 'Direccion' }
+            form:
+                fields:
+                    - { property: 'codigomarca', label: 'Codigo' }
+                    - { property: 'nombremarca', label: 'Nombre' }
+                    - { property: 'iddireccion', label: 'Direccion' }
+        Modelos: 
+            class: Erre\TransitoMultasBundle\Entity\Modelo
+            list:
+                fields:
+                    - { property: 'idmodelo', label: 'ID.' }
+                    - { property: 'nombremodelo', label: 'Nombre' }
+                    - { property: 'potenciamodelo', label: 'Potencia' }
+                    - { property: 'idmarca', label: 'Marca' }
+            form:
+                fields:
+                    - { property: 'nombremodelo', label: 'Nombre' }
+                    - { property: 'potenciamodelo', label: 'Potencia' }
+                    - { property: 'idmarca', label: 'Marca' }
+        Personas: 
+            class: Erre\TransitoMultasBundle\Entity\Persona
+            list:
+                fields:
+                    - { property: 'cedulapersona', label: 'ID.' }
+                    - { property: 'nocedula', label: 'Cedula' }
+                    - { property: 'nombrepersona', label: 'Nombre' }
+                    - { property: 'apellidopersona', label: 'Apellido' }
+                    - { property: 'fechanacimientopersona', label: 'Fecha Nac.' }
+            form:
+                fields:
+                    - { property: 'nocedula', label: 'Cedula' }
+                    - { property: 'nombrepersona', label: 'Nombre' }
+                    - { property: 'apellidopersona', label: 'Apellido' }
+                    - { property: 'fechanacimientopersona', label: 'Fecha Nac.' }
+        Vehiculos: 
+            class: Erre\TransitoMultasBundle\Entity\Vehiculo
+            list:
+                fields:
+                    - { property: 'idvehiculo', label: 'ID.' }
+                    - { property: 'fechamatriculavehiculo', label: 'Fecha Matricula' }
+                    - { property: 'idmodelo', label: 'Modelo' }
+                    - { property: 'idmarca', label: 'Marca' }
+                    - { property: 'cedulapersona', label: 'Propietario' }
+            form:
+                fields:
+                    - { property: 'fechamatriculavehiculo', label: 'Fecha Matricula' }
+                    - { property: 'idmodelo', label: 'Modelo' }
+                    - { property: 'idmarca', label: 'Marca' }
+                    - { property: 'cedulapersona', label: 'Propietario' }
