@@ -1,0 +1,170 @@
+<?php
+
+namespace Erre\TransitoMultasBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Vehiculo
+ *
+ * @ORM\Table(name="Vehiculo")
+ * @ORM\Entity
+ */
+class Vehiculo
+{
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fechaMatriculaVehiculo", type="date", nullable=false)
+     */
+    private $fechamatriculavehiculo;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="idVehiculo", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idvehiculo;
+
+    /**
+     * @var \Erre\TransitoMultasBundle\Entity\Persona
+     *
+     * @ORM\ManyToOne(targetEntity="Erre\TransitoMultasBundle\Entity\Persona")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="cedulaPersona", referencedColumnName="cedulaPersona")
+     * })
+     */
+    private $cedulapersona;
+
+    /**
+     * @var \Erre\TransitoMultasBundle\Entity\Modelo
+     *
+     * @ORM\ManyToOne(targetEntity="Erre\TransitoMultasBundle\Entity\Modelo")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idModelo", referencedColumnName="idModelo")
+     * })
+     */
+    private $idmodelo;
+
+    /**
+     * @var \Erre\TransitoMultasBundle\Entity\Marca
+     *
+     * @ORM\ManyToOne(targetEntity="Erre\TransitoMultasBundle\Entity\Marca")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idMarca", referencedColumnName="idMarca")
+     * })
+     */
+    private $idmarca;
+
+
+
+    /**
+     * Set fechamatriculavehiculo
+     *
+     * @param \DateTime $fechamatriculavehiculo
+     * @return Vehiculo
+     */
+    public function setFechamatriculavehiculo($fechamatriculavehiculo)
+    {
+        $this->fechamatriculavehiculo = $fechamatriculavehiculo;
+    
+        return $this;
+    }
+
+    /**
+     * Get fechamatriculavehiculo
+     *
+     * @return \DateTime 
+     */
+    public function getFechamatriculavehiculo()
+    {
+        return $this->fechamatriculavehiculo;
+    }
+
+    /**
+     * Get idvehiculo
+     *
+     * @return integer 
+     */
+    public function getIdvehiculo()
+    {
+        return $this->idvehiculo;
+    }
+
+    /**
+     * Set cedulapersona
+     *
+     * @param \Erre\TransitoMultasBundle\Entity\Persona $cedulapersona
+     * @return Vehiculo
+     */
+    public function setCedulapersona(\Erre\TransitoMultasBundle\Entity\Persona $cedulapersona = null)
+    {
+        $this->cedulapersona = $cedulapersona;
+    
+        return $this;
+    }
+
+    /**
+     * Get cedulapersona
+     *
+     * @return \Erre\TransitoMultasBundle\Entity\Persona 
+     */
+    public function getCedulapersona()
+    {
+        return $this->cedulapersona;
+    }
+
+    /**
+     * Set idmodelo
+     *
+     * @param \Erre\TransitoMultasBundle\Entity\Modelo $idmodelo
+     * @return Vehiculo
+     */
+    public function setIdmodelo(\Erre\TransitoMultasBundle\Entity\Modelo $idmodelo = null)
+    {
+        $this->idmodelo = $idmodelo;
+    
+        return $this;
+    }
+
+    /**
+     * Get idmodelo
+     *
+     * @return \Erre\TransitoMultasBundle\Entity\Modelo 
+     */
+    public function getIdmodelo()
+    {
+        return $this->idmodelo;
+    }
+
+    /**
+     * Set idmarca
+     *
+     * @param \Erre\TransitoMultasBundle\Entity\Marca $idmarca
+     * @return Vehiculo
+     */
+    public function setIdmarca(\Erre\TransitoMultasBundle\Entity\Marca $idmarca = null)
+    {
+        $this->idmarca = $idmarca;
+    
+        return $this;
+    }
+
+    /**
+     * Get idmarca
+     *
+     * @return \Erre\TransitoMultasBundle\Entity\Marca 
+     */
+    public function getIdmarca()
+    {
+        return $this->idmarca;
+    }
+
+    public function __toString()
+    {
+        $rs = $this->cedulapersona."-".$this->idmodelo." ".$this->idmarca;
+        return $rs;
+    }
+}

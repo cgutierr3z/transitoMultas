@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Erre\TransitoMultasBundle\Entity\Persona" table="Persona">
+    <id name="cedulapersona" type="integer" column="cedulaPersona">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nocedula" type="string" column="noCedula" length="12" nullable="false"/>
+    <field name="nombrepersona" type="string" column="nombrePersona" length="45" nullable="false"/>
+    <field name="apellidopersona" type="string" column="apellidoPersona" length="45" nullable="false"/>
+    <field name="fechanacimientopersona" type="date" column="fechaNacimientoPersona" nullable="false"/>
+    <many-to-one field="iddireccion" target-entity="Direccion">
+      <join-columns>
+        <join-column name="idDireccion" referenced-column-name="idDireccion"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

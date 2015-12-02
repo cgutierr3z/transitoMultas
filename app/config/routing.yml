@@ -1,0 +1,10 @@
+erre_transito_multas:
+    resource: "@ErreTransitoMultasBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin

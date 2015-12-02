@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Erre\TransitoMultasBundle\Entity\Agente" table="Agente">
+    <id name="noregistro" type="integer" column="noRegistro">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombreagente" type="string" column="NombreAgente" length="45" nullable="false"/>
+    <field name="apellidoagente" type="string" column="ApellidoAgente" length="45" nullable="false"/>
+  </entity>
+</doctrine-mapping>

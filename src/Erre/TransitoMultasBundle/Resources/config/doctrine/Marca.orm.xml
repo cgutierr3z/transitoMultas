@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Erre\TransitoMultasBundle\Entity\Marca" table="Marca">
+    <id name="idmarca" type="integer" column="idMarca">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="codigomarca" type="string" column="codigoMarca" length="45" nullable="false"/>
+    <field name="nombremarca" type="string" column="nombreMarca" length="45" nullable="false"/>
+    <many-to-one field="iddireccion" target-entity="Direccion">
+      <join-columns>
+        <join-column name="idDireccion" referenced-column-name="idDireccion"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

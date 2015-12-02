@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Erre\TransitoMultasBundle\Entity\Direccion" table="Direccion">
+    <id name="iddireccion" type="integer" column="idDireccion">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="calle" type="string" column="calle" length="45" nullable="false"/>
+    <field name="numero" type="integer" column="numero" nullable="false"/>
+    <many-to-one field="idciudad" target-entity="Ciudad">
+      <join-columns>
+        <join-column name="idCiudad" referenced-column-name="idCiudad"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

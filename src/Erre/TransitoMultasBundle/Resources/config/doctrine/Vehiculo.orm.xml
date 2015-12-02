@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Erre\TransitoMultasBundle\Entity\Vehiculo" table="Vehiculo">
+    <id name="idvehiculo" type="integer" column="idVehiculo">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="fechamatriculavehiculo" type="date" column="fechaMatriculaVehiculo" nullable="false"/>
+    <many-to-one field="idmodelo" target-entity="Modelo">
+      <join-columns>
+        <join-column name="idModelo" referenced-column-name="idModelo"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idmarca" target-entity="Marca">
+      <join-columns>
+        <join-column name="idMarca" referenced-column-name="idMarca"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="cedulapersona" target-entity="Persona">
+      <join-columns>
+        <join-column name="cedulaPersona" referenced-column-name="cedulaPersona"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
