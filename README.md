@@ -4,13 +4,13 @@ Proyecto de trabajo en la materia Base de Datos. Segundo semestre de 2015.
 How to install this project
 ---------------------------
 Prepare composer:
-  1. Download composer`curl -sS https://getcomposer.org/installer | php`
-  2. Install composer globally `mv composer.phar /usr/local/bin/composer`
+  1. Download composer: `curl -sS https://getcomposer.org/installer | php`
+  2. Install composer globally: `mv composer.phar /usr/local/bin/composer`
 
 Install Project:
   1. `git clone https://github.com/z3774/transitoMultas.git`
   2. `composer install` or `php composer.phar`
-  3. Edit `easy-admin-demo/app/config/parameters.yml` and configure
+  3. Edit `transitoMultas/app/config/parameters.yml` and configure
      credentials to acces a database for this demo.
   4. `php app/console doctrine:database:create`
   5. `php app/console doctrine:schema:create`
