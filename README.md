@@ -19,4 +19,4 @@ Install Project:
   8. Browse `http://127.0.0.1:8000/admin/`
 
 #Licence
-This software is published under the [GNU GENERAL PUBLIC LICENSE Version 3](LICENSE)
+This software is published under the [MIT License](LICENSE)
