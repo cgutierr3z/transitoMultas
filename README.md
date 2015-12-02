@@ -9,14 +9,14 @@ Prepare composer:
 
 Install Project:
   1. `git clone https://github.com/z3774/transitoMultas.git`
-  2. `composer install` or `php composer.phar`
+  2. `composer install`
   3. Edit `transitoMultas/app/config/parameters.yml` and configure
      credentials to acces a database for this demo.
   4. `php app/console doctrine:database:create`
   5. `php app/console doctrine:schema:create`
   6. `php app/console doctrine:fixtures:load --append`
   7. `php app/console server:run`
-  8. Browse `http://127.0.0.1:8000/admin/`
+  8. Browse `[http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)/`
 
 #Licence
 This software is published under the [MIT License](LICENSE)
